@@ -1,0 +1,12 @@
+#SYNOPSIS
+This PowerShell script ensures that the  built-in Microsoft password complexity filter is enabled. 
+
+#NOTES
+STIG-ID:  WN11-AC-000040
+
+
+#Code: 
+$c="$env:TEMP\s.cfg"; secedit /export /cfg $c /areas SECURITYPOLICY | Out-Null; (Get-Content $c) -replace '^PasswordComplexity\s*=.*','PasswordComplexity = 1' | Set-Content $c; secedit /configure /db "$env:windir\security\local.sdb" /cfg $c /areas SECURITYPOLICY | Out-Null; Remove-Item $c -Force
+
+#Verify: 
+$v="$env:TEMP\v.cfg"; secedit /export /cfg $v /areas SECURITYPOLICY | Out-Null; Select-String -Path $v -Pattern "PasswordComplexity"; Remove-Item $v -Force
