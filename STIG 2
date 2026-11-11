@@ -1,0 +1,12 @@
+#SYNOPSIS
+This PowerShell script ensures that the Windows 11 account lockout duration is configured to 15. 
+
+#NOTES
+STIG-ID: WN11-AC-000005
+ 
+
+#Code: 
+net accounts /lockoutduration:15
+
+#Verify: 
+net accounts | Select-String "Lockout duration"
