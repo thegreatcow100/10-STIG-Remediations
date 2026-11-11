@@ -1,14 +1,11 @@
+#Synopsis
 This PowerShell script ensures that passwords must, at a minimum, be 14 characters.
 
+#Notes
 STIG-ID: WN11-AC-000035
 
-
-Code: 
-
+#Code: 
 net accounts /minpwlen:14
 
-Verify using the following:
-
-net accounts | Select-String "Minimum password length" 
-
- 
+#Verify:
+net accounts | Select-String "Minimum password length"
