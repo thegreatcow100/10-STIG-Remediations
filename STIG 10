@@ -1,0 +1,16 @@
+#SYNOPSIS
+This PowerShell script ensures that camera access from the lock screen is disabled 
+
+
+#NOTES
+STIG-ID: WN11-CC-000005
+ 
+
+#Code: 
+New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization" -Force | New-ItemProperty -Name "NoLockScreenCamera" -Value 1 -PropertyType DWord -Force | Out-Null
+
+#Verify: 
+(Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization").NoLockScreenCamera
+
+#Verification Notes
+When verifying, the value returned should be "1". 
