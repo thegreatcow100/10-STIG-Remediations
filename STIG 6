@@ -1,0 +1,12 @@
+#SYNOPSIS
+This PowerShell script ensures that the minimum password age is configured to at least 1 day
+
+#NOTES
+STIG-ID: WN11-AC-000030
+ 
+
+#Code: 
+net accounts /minpwage:1
+
+#Verify: 
+net accounts | Select-String "Minimum password age"
