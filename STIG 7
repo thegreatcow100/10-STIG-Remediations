@@ -1,0 +1,12 @@
+#SYNOPSIS
+This PowerShell script ensures that the number of allowed bad logon attempts is configured to three or less. 
+
+#NOTES
+STIG-ID:  WN11-AC-000010
+ 
+
+#Code: 
+net accounts /lockoutthreshold:3
+
+#Verify: 
+net accounts | Select-String "Lockout threshold"
