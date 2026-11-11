@@ -1,6 +1,4 @@
- <#
-.SYNOPSIS
-    This PowerShell script ensures that passwords must, at a minimum, be 14 characters.
+This PowerShell script ensures that passwords must, at a minimum, be 14 characters.
 
     STIG-ID        : WN11-AC-000035
 
