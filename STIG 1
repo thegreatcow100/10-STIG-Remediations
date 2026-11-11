@@ -7,7 +7,7 @@ Code:
 
 net accounts /minpwlen:14
 
-Verify using the following
+Verify using the following:
 
 net accounts | Select-String "Minimum password length" 
 
