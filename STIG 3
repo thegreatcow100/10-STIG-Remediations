@@ -1,5 +1,5 @@
 #SYNOPSIS
-This PowerShell script ensures that the  built-in Microsoft password complexity filter is enabled. 
+This PowerShell script ensures that the built-in Microsoft password complexity filter is enabled. 
 
 #NOTES
 STIG-ID:  WN11-AC-000040
