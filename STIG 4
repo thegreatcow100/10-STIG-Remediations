@@ -1,0 +1,12 @@
+#SYNOPSIS
+This PowerShell script ensures that the period of time before the bad logon counter is reset is configured to 15 minutes.  
+
+#NOTES
+STIG-ID: WN11-AC-000015
+ 
+
+#Code: 
+net accounts /lockoutwindow:15
+
+#Verify: 
+net accounts | Select-String "Lockout observation window"
