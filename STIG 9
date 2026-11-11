@@ -1,0 +1,12 @@
+#SYNOPSIS
+This PowerShell script ensures that the System event log size is configured to 32768 KB or greater.
+
+#NOTES
+STIG-ID: WN11-AU-000510
+ 
+
+#Code: 
+New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\System" -Force | New-ItemProperty -Name "MaxSize" -Value 32768 -PropertyType DWord -Force | Out-Null
+
+#Verify: 
+"HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\System").MaxSize
