@@ -1,0 +1,13 @@
+#SYNOPSIS
+This PowerShell script ensures that the password history is configured to remember 24 passwords.
+
+
+#NOTES
+STIG-ID: WN11-AC-000020
+ 
+
+#Code: 
+net accounts /uniquepw:24
+
+#Verify: 
+net accounts | Select-String "password history"
